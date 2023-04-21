@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/71316d0f68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <title>Task Manager</title>
+</head>
+<body>
+
+    <header>
+        <!-- top navbar -->
+        <nav class="teal lighten-4">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home') }}" class="brand-logo">Task Manager</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="">New Task</a></li>
+                    <li><a href="">Catagories</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- mobile side navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="">New Task</a></li>
+            <li><a href="">Catagories</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        {% block container %}
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer teal lighten-5">
+        <div class="footer-copyright">
+            For educational purposes only.
+            <div class="container">
+                © 2023 Copyright Text
+                <a class="white-text right" href="http://codeinstitute.net" target="_blank">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+</body>
+</html>
